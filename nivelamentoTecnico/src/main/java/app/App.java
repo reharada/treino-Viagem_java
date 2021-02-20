@@ -1,14 +1,13 @@
 package app;
 
+
 import dto.Acompanhante;
 import dto.Viagem;
 import dto.ViagemInternacional;
 import dto.ViagemNacional;
 import enums.Destinos;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 public class App {
@@ -74,7 +73,8 @@ public class App {
      //viagem2.destino = "Osasco";
      //System.out.println("A viagem 2 tem destino: "+ viagem2.destino);
 
-    ViagemNacional viagemNacional1 = new ViagemNacional(Destinos.GOIAS);
+    ViagemNacional viagemNacional1 = new ViagemNacional(Destinos.MANAUS);
+    //ViagemNacional viagemNacional1 = new ViagemNacional(Destinos.GOIAS);
     try {
     viagemNacional1.setAcompanhantes(acompanhantes);
     } catch (Exception excecao) {
@@ -83,7 +83,8 @@ public class App {
     }
     viagemNacional1.setCpf("123.123.123-12");
 
-    ViagemInternacional viagemIntenacional1 = new ViagemInternacional(Destinos.MIAMI);
+    ViagemInternacional viagemIntenacional1 = new ViagemInternacional(Destinos.ACAPULCO);
+    //ViagemInternacional viagemIntenacional1 = new ViagemInternacional(Destinos.MIAMI);
     try {
     viagemIntenacional1.setAcompanhantes(acompanhantes);
     } catch (Exception excecao) {
@@ -98,6 +99,11 @@ public class App {
 
     System.out.println("O cpf é: " + viagemNacional1.getCpf());
     System.out.println("O passaporte é: " + viagemIntenacional1.getPassaporte());
+
+    System.out.println("------------------------------------------------------------------------");
+
+        System.out.println("Dias para retorno Viagem Internacional: " + viagemIntenacional1.calcularPrevisaoDeDiasParaRetorno());
+        System.out.println("Dias para retorno Viagem Nacional: " + viagemNacional1.calcularPrevisaoDeDiasParaRetorno());
 
     }
 }
